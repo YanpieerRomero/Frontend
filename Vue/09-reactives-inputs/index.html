@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@next"></script>
+    <div id="app">        
+    </div>
+    <script>
+        const vm = Vue.createApp({
+            data() {
+                return {
+                    text: "Hello Vue",
+                    anotherText: "Hello Vue in another text"
+                };
+            },
+            methods: {
+                input(e) {
+                    // Indirectamente modifico el valor de p en el html
+                    this.text = e.target.value;
+                }
+            },
+            // v-on:change detecta el evento al cambiar el texto
+            // v-on:input detecta el evento al cambiar el texto en tiempo real
+            // Se puede resumir:
+            // v-on:event="funct"       --> @event="funct"
+            // v-bind:attr="var-value"  --> :attr="var-value"
+            // v-model="var-react" nos da reactividad entre componentes
+            template: `
+                <p>{{text}}</p>
+                <input 
+                    type="text" 
+                    v-on:input="input" 
+                    v-bind:value="text"                    
+                />
+                <br/>
+                <br/>
+                <input type="text" v-model="anotherText"/>
+                <p>{{anotherText}}</p>
+                `
+        }).mount("#app");        
+    </script> 
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@next"></script>
+    <div id="app">        
+    </div>
+    <script>
+        const vm = Vue.createApp({
+            data() {
+                return {
+                    title: "We experiment with Vue 3",
+                    message: '',
+                    counter: 0,
+                    attr: 'click'
+                };
+            },
+            methods: {
+                increment() {
+                    this.counter++;
+                    this.message = 'This value has increased 🥳!';
+                },
+                decrement() {
+                    this.counter--;
+                    this.message = 'This value has decresead 😭!';
+                },
+                reset() {
+                    this.counter=0;
+                    this.message = 'This value is reset 😐!';
+                } 
+            },
+            template: `
+                <br/>
+                <div class="badge bg-warning text-wrap">
+                    <h3>{{title}}</h3>
+                </div>
+                <div>
+                    <br/>
+                    <p>{{counter}}</p>
+                    <button type="button" class="btn btn-outline-dark" v-on:click="increment"> + </button>
+                    <input
+                    class="btn btn-secondary"
+                    type="text"
+                    v-bind:value="counter"                    
+                    />                    
+                    <button type="button" class="btn btn-outline-dark" @click="decrement"> - </button>
+                    <button type="button" class="btn btn-outline-dark" @[attr]="reset"> Reset </button>
+                </div>
+                <br/>
+                <div>
+                    <h3>{{message}}</h3>
+                </div>
+                `
+        }).mount("#app");        
+    </script> 
+</body>
+</html>
