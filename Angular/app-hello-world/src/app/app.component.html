@@ -1,0 +1,78 @@
+<div class="container mt-4">
+    <h1>Databinding</h1>
+    <div class="row">
+        <!-- Examples of Interpolation -->
+        <h2>Hello my name is {{ name }}</h2>
+        <h3>The sum of 2 + 2 = {{ 2 + 2 }}</h3>
+        <h3>The sum of 10 + 15 = {{ getSum(10, 15) }}</h3>
+        <br>
+        <br>
+        <br>
+        <!-- Examples of Property Binding -->
+        <input type="text" class="form-control" [placeholder]="placeholderText" [disabled] = "disabled">        
+        <div>
+            <br>
+            <br>
+            <br>
+        </div>
+        <img [src]="imgSrc" alt="Img" width="400px" height="400px">
+        <br>
+        <br>
+        <br>
+        <!-- Examples of Event Binding -->
+        <h3>{{ text }}</h3>
+        <br>
+        <button class="btn btn-primary" (click)="changeText()">Click me</button>
+        <div>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- Examples of Two Way Data Binding -->
+        <input type="textDataBinding" class="form-control" placeholder="Type something here" [(ngModel)]="textDataBinding">        
+        <div>
+            <br>
+            <br>
+            <br>
+        </div>
+        {{ textDataBinding }}
+    </div>
+</div>
+<div class="container mt-4">
+    <h1>Directives Structurals</h1>
+    <div class="row">
+        <h3>List of students</h3>
+        <button type="button" class="btn btn-primary ml-auto" (click)="toogle()">Toogle</button>
+    </div>
+    <br>
+    <table class="table" *ngIf="students.length > 0">
+        <caption>Table of students list</caption>
+        <thead>
+            <th>Nro</th>
+            <th>Name</th>
+            <th>Status</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students; let i = index" [ngSwitch]="student.status">
+                <td>{{ i + 1 }}</td>
+                <td>{{ student.name }}</td>
+                <!-- <td [ngStyle]="{ 'font-style': student.status === 'Promocionado' ? 'italic' : 'normal' }"> -->
+                <td>
+                    <!-- <span [ngClass]="student.status === 'Promocionado' ? 'badge bg-success' : 'badge bg-secondary'">
+                        {{ student.status }}
+                    </span> -->
+                    <span *ngSwitchCase="'Promoted'" class="badge bg-success">
+                        {{ student.status }}
+                    </span>
+                    <span *ngSwitchCase="'Regular'" class="badge bg-secondary">
+                        {{ student.status }}
+                    </span>
+                    <span *ngSwitchCase="'Free'" class="badge bg-danger">
+                        {{ student.status }}
+                    </span>
+                </td>
+            </tr>            
+        </tbody>
+    </table>
+    <h3 *ngIf="students.length === 0">There are no records for showing</h3>
+</div>
