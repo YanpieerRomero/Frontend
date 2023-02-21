@@ -1,0 +1,13 @@
+<div class="jumbotron text-center">
+  <button class="btn btn-success btn-lg" (click)="throwDices()">
+    Throw Dices
+  </button>
+  <br>
+  <img class="img" [src]="leftDice" alt="dice one">
+  <img class="img" [src]="rightDice" alt="dice two">
+  <h1 *ngIf="numberOne === numberTwo">
+    <span class="badge bg-success">
+      You Won!
+    </span>
+  </h1>
+</div>
