@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #0A0E21;
+}
+
+.title {
+    font-family: 'Shantell Sans', cursive;
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2.0rem;
+}
+
+.row {
+    margin-top: 20px;
+}
+
+.btn-color {
+    background-color: #FF3366;
+    border-color: #FF3366;
+    border-radius: 25px;
+    width: 100%;
+}
+
+.btn-color:hover {
+    background-color: #FF3366;
+    border-color: #FF3366;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}

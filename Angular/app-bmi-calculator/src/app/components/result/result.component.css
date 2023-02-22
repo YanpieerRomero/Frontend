@@ -1,0 +1,26 @@
+.backgroundItem {
+    background-color: #FF111328;
+    height: 430px;
+    border-radius: 20px;
+    color: white;
+}
+
+.result {
+    color: #12BD45;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.numberStyle {
+    font-size: 80px;
+    font-weight: 700;
+    padding-top: 25px;
+    padding-bottom: 45px;
+}
+
+.interpretation {
+    margin: 10px;
+    font-size: 18px;
+    text-align: center;
+}

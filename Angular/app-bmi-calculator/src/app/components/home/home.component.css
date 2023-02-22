@@ -1,0 +1,43 @@
+.backgroundItem {
+    background-color: #FF111328;
+    height: 130px;
+    border-radius: 20px;
+    color: white;
+}
+
+.sex {
+    font-size: 40px;
+}
+
+.numberStyle {
+    font-size: 32px;
+    font-weight: 800;
+    margin-top: -25px;
+}
+
+.centimeter {
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: -7px;
+}
+
+.form-range {
+    padding: 0px 20px;
+
+}
+
+input[type=range]::-webkit-slider-thumb {
+    background: #FF3366;
+}
+
+.additionSubtraction {
+    cursor: pointer;
+    background-color: #FF4C4F5E;
+    padding: 7px;
+    border-radius: 15px;
+    margin-left: 3px;
+}
+
+.sexDesactivated {
+    background-color: #7D2F2F33;
+}
