@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background: linear-gradient(rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)), url('./assets/img/appointment.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}

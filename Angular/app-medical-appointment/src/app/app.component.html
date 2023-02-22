@@ -1,0 +1,13 @@
+<div class="container pt-5">
+    <div class="text-center classTitle">
+        Medical Appointments Application
+    </div>
+    <div class="row pt-5">
+        <div class="col-lg-6">
+            <app-appointments-create (newAppointment)="addAppointment($event)"></app-appointments-create>
+        </div>
+        <div class="col-lg-6">
+            <app-appointments-list [appointmentsList]="appointmentsList" (removeAppointment)="removeAppointment($event)"></app-appointments-list>
+        </div>
+    </div>
+</div>
