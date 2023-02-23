@@ -1,0 +1,23 @@
+<div *ngIf="showError" class="alert alert-dismissible alert-danger">
+    <strong>{{ textError | uppercase }}</strong>
+</div>
+<div class="container mt-3">
+    <h1 class="display-5 text-center">
+        ENTER URL TO SHORTEN
+    </h1>
+    <div class="row mt-5 mb-4">
+        <div class="col-lg-8">
+            <input type="text" [(ngModel)]="urlName" class="form-control form-control-lg" placeholder="Enter URL...">
+        </div>
+        <div class="col-lg-4">
+            <button (click)="processUrl()" class="btn btn-primary btn-block btn-lg">Shorten</button>
+        </div>
+    </div>
+    <div *ngIf="urlProcessed" class="row">
+        <div class="col-lg-8">
+            <input type="text" [(ngModel)]="urlShort" class="form-control form-control-lg"
+                placeholder="Processed URL...">
+        </div>
+    </div>
+    <app-spinner *ngIf="loading"></app-spinner>
+</div>
