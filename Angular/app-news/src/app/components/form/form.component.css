@@ -1,0 +1,19 @@
+.jumbotron {
+    padding: 5rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #313131;
+    border-radius: .3rem;
+}
+
+.heading {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.btn {
+    font-size: 1.5rem;
+    width: 100%;        
+}
