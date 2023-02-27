@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "app-credit-card": {
+      "hosting": {
+        "app-credit-card": [
+          "app-credit-card"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "app-credit-card"
+  }
+}

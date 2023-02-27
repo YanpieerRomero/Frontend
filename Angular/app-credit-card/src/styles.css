@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background: #283048;
+    background: linear-gradient(to right, #283048, #859398);
+}
+
+.title {
+    text-align: center;
+    font-family: 'Potta One', cursive;
+}

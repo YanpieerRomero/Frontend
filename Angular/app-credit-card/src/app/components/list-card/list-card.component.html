@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="title">LIST CARD</h5>
+        <table class="table" aria-describedby="myTable">
+            <tbody>
+                <tr *ngIf="showColOfTable">
+                    <th scope="col">Owner</th>
+                    <th scope="col">Card Number</th>
+                    <th scope="col">Expiration Date</th>
+                </tr>
+                <tr *ngFor="let card of listCards">
+                    <td>{{ card.owner }}</td>
+                    <td>{{ card.cardNumber }}</td>
+                    <td>{{ card.expirationDate }}</td>
+                    <td>
+                        <i (click)="updateCard(card)" class="fa-solid fa-pen-to-square text-info"></i>
+                        <i (click)="deleteCard(card.id)" class="fa-solid fa-trash-can text-danger"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
