@@ -1,0 +1,19 @@
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    color: #ffffff;
+}
+
+hr {
+    border-color: #F05F44;
+    border-width: 3px;
+    max-width: 65px;
+    opacity: 100%;
+    margin: auto auto 1rem auto;
+}
+
+.layout {
+    background: url(../../assets/img/sunset.jpg) no-repeat center center fixed;
+    height: 100vh;
+    background-size: cover;
+}

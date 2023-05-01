@@ -1,0 +1,19 @@
+<app-spinner *ngIf="loading"></app-spinner>
+<div class="row" *ngIf="!loading">
+  <div class="col-lg-8 offset-lg-2">
+    <div class="card" style="width: 25rem; margin: 0 auto">
+      <img [src]="urlImg" alt="Not found image" class="card-img-top img-thumbnail">
+      <div class="card-body text-center">
+        <h5 class="card-title">{{ firstName }} {{ lastName}}</h5>
+        <ul class="list-group">
+          <li class="list-group-item">Email: {{email}}</li>
+          <li class="list-group-item">Telephone: {{phone}}</li>
+          <li class="list-group-item">Gender: {{gender}}</li>
+        </ul>
+      </div>
+      <button class="btn btn-primary btn-block btn-xl" routerLink="/dashboard">
+        return
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<app-spinner *ngIf="loading"></app-spinner>
+<div class="row">
+  <div *ngFor="let user of listUsers" class="col-lg-3" style="margin: 30px;">
+    <app-card-user [user]="user"></app-card-user>
+  </div>
+</div>
