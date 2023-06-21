@@ -1,0 +1,43 @@
+<h5 *ngIf="isEmptyLocal(inputListLocalFromApp)" class="empty-table-title mx-auto text-center mt-5">No hay locales registrados</h5>
+<table *ngIf="!showBtnUpdate" class="table table-hover text-center border-primary" aria-describedby="mydesc">
+    <thead>
+        <tr *ngIf="!isEmptyLocal(inputListLocalFromApp)" class="table-active text-center">
+            <th scope="col">Código de la Empresa</th>
+            <th scope="col">Código del Local</th>
+            <th scope="col">Nombre del Local</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">CNPJ</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Telefono de contacto</th>
+            <th scope="col">Email de contacto</th>
+            <th scope="col">Observaciones</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let local of inputListLocalFromApp">
+            <td>{{ local.companyCode }}</td>
+            <td>{{ local.localCode }}</td>
+            <td>{{ local.localName }}</td>
+            <td>{{ local.description }}</td>
+            <td>{{ local.cnpj }}</td>
+            <td>{{ local.cpf }}</td>
+            <td>{{ local.address }}</td>
+            <td>{{ local.contactTelephone }}</td>
+            <td>{{ local.contactEmail }}</td>
+            <td>{{ local.observations }}</td>
+            <td>
+                <i (click)="openPopup(local, inputListLocalFromApp)" class="fa-solid fa-pen text-info d-inline"></i>
+                <i (click)="deleteLocal(local, inputListLocalFromApp)" class="fa-solid fa-trash-can text-danger d-inline"></i>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<app-modal [inputDisplayStyle]="sendPropertyDisplayStyle()"
+    [inputLocalBody]="sendLocalBodyUpdate()"
+    [inputListLocal]="sendListLocal()"
+    [inputShowBtnUpdate]="sendValueBtnUpdate()"
+    (outputDisplayStyle)="changePropertyDisplayStyle($event)"
+    (outputListLocal)="changeValueListLocal($event)"
+    (outputBtnUpdate)="changeValueBtnUpdate($event)"></app-modal>

@@ -1,0 +1,181 @@
+<div class="modal" [ngStyle]="{ 'display': inputDisplayStyle }">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content border-primary mb-3">
+            <div class="modal-header">
+                <h5 *ngIf="inputShowBtnRegister" class="modal-title">Registrar Local</h5>
+                <h5 *ngIf="inputShowBtnUpdate" class="modal-title">Modificar Local</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="closePopup()">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <pre>{{ myForm.value | json }}</pre>
+            <div class="modal-body">
+                <form [formGroup]="myForm">
+                    <div class="row mb-3">
+                        <div class="col-lg-6">
+                            <label class="form-label">Código de la Empresa</label>
+                            <input type="text" class="form-control"
+                                [ngClass]="isEmptyOrValid(inputLocalBody.companyCode)" formControlName="companyCode">
+                        </div>
+                        <div class="col-lg-6">
+                            <label class="form-label">Código del Local</label>
+                            <input *ngIf="inputShowBtnRegister" type="text" class="form-control"
+                                [ngClass]="isInvalidOrValid(inputLocalBody.localCode)" formControlName="localCode">
+                            <input *ngIf="inputShowBtnUpdate" type="text" class="form-control"
+                                [ngClass]="isInvalidOrValid(inputLocalBody.localCode)" readonly
+                                formControlName="localCode">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-lg-12">
+                            <label class="form-label">Nombre del Local</label>
+                            <input type="text" class="form-control"
+                                [ngClass]="isInvalidOrValid(inputLocalBody.localName)" formControlName="localName">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-lg-12">
+                            <label class="form-label">Descripción</label>
+                            <input type="text" class="form-control"
+                                [ngClass]="isEmptyOrValid(inputLocalBody.description)" formControlName="description">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-lg-6">
+                            <label class="form-label">CNPJ</label>
+                            <input type="text" class="form-control" [ngClass]="isEmptyOrValid(inputLocalBody.cnpj)"
+                                formControlName="cnpj">
+                        </div>
+                        <div class="col-lg-6">
+                            <label class="form-label">CPF</label>
+                            <input type="text" class="form-control" [ngClass]="isEmptyOrValid(inputLocalBody.cpf)"
+                                formControlName="cpf">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-lg-12">
+                            <label class="form-label">Dirección</label>
+                            <input type="text" class="form-control" [ngClass]="isEmptyOrValid(inputLocalBody.address)"
+                                formControlName="address">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-lg-12">
+                            <label class="form-label">Telefono de Contacto</label>
+                            <input type="text" class="form-control"
+                                [ngClass]="isEmptyOrValid(inputLocalBody.contactTelephone)"
+                                formControlName="contactTelephone">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-lg-12">
+                            <label class="form-label">Email de Contacto</label>
+                            <input type="text" class="form-control"
+                                [ngClass]="isEmptyOrValid(inputLocalBody.contactEmail)" formControlName="contactEmail">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-lg-12">
+                            <label class="form-label">Observaciones</label>
+                            <input type="text" class="form-control"
+                                [ngClass]="isEmptyOrValid(inputLocalBody.observations)" formControlName="observations">
+                        </div>
+                    </div>
+                </form>
+                <!-- <div class="form-group">
+                    <form [formGroup]="myForm">
+                        <div class="row mb-3">
+                            <div class="col-lg-6">
+                                <label class="form-label">Código de la Empresa</label>
+                                <input type="text" class="form-control"
+                                    [ngClass]="isEmptyOrValid(inputLocalBody.companyCode)"
+                                    [(ngModel)]="inputLocalBody.companyCode" value="{{inputLocalBody.companyCode}}">
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="form-label">Código del Local</label>
+                                <input *ngIf="inputShowBtnRegister" type="text" class="form-control"
+                                    [ngClass]="isInvalidOrValid(inputLocalBody.localCode)"
+                                    [(ngModel)]="inputLocalBody.localCode" [value]="inputLocalBody.localCode"
+                                    formControlName="localCode">
+                                <input *ngIf="inputShowBtnUpdate" type="text" class="form-control"
+                                    [ngClass]="isInvalidOrValid(inputLocalBody.localCode)"
+                                    [(ngModel)]="inputLocalBody.localCode" [value]="inputLocalBody.localCode" readonly>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-12">
+                                <label class="form-label">Nombre del Local</label>
+                                <input type="text" class="form-control"
+                                    [ngClass]="isInvalidOrValid(inputLocalBody.localName)"
+                                    [(ngModel)]="inputLocalBody.localName" [value]="inputLocalBody.localName"
+                                    formControlName="localName">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-12">
+                                <label class="form-label">Descripción</label>
+                                <input type="text" class="form-control"
+                                    [ngClass]="isEmptyOrValid(inputLocalBody.description)"
+                                    [(ngModel)]="inputLocalBody.description" [value]="inputLocalBody.description">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-6">
+                                <label class="form-label">CNPJ</label>
+                                <input type="text" class="form-control" [ngClass]="isEmptyOrValid(inputLocalBody.cnpj)"
+                                    [(ngModel)]="inputLocalBody.cnpj" [value]="inputLocalBody.cnpj">
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="form-label">CPF</label>
+                                <input type="text" class="form-control" [ngClass]="isEmptyOrValid(inputLocalBody.cpf)"
+                                    [(ngModel)]="inputLocalBody.cpf" [value]="inputLocalBody.cpf">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-12">
+                                <label class="form-label">Dirección</label>
+                                <input type="text" class="form-control"
+                                    [ngClass]="isEmptyOrValid(inputLocalBody.address)"
+                                    [(ngModel)]="inputLocalBody.address" [value]="inputLocalBody.address">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-12">
+                                <label class="form-label">Telefono de Contacto</label>
+                                <input type="text" class="form-control"
+                                    [ngClass]="isEmptyOrValid(inputLocalBody.contactTelephone)"
+                                    [(ngModel)]="inputLocalBody.contactTelephone"
+                                    [value]="inputLocalBody.contactTelephone">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-12">
+                                <label class="form-label">Email de Contacto</label>
+                                <input type="text" class="form-control"
+                                    [ngClass]="isEmptyOrValid(inputLocalBody.contactEmail)"
+                                    [(ngModel)]="inputLocalBody.contactEmail" [value]="inputLocalBody.contactEmail">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-12">
+                                <label class="form-label">Observaciones</label>
+                                <input type="text" class="form-control"
+                                    [ngClass]="isEmptyOrValid(inputLocalBody.observations)"
+                                    [(ngModel)]="inputLocalBody.observations" [value]="inputLocalBody.observations">
+                            </div>
+                        </div>
+                </div> -->
+            </div>
+            <div class="modal-footer">
+                <button *ngIf="inputShowBtnRegister" type="button" class="btn btn-primary"
+                    (click)="saveLocal(inputLocalBody)" [disabled]="validateFields(inputLocalBody)">Guardar</button>
+                <button *ngIf="inputShowBtnUpdate" type="button" class="btn btn-primary"
+                    (click)="updateLocal(inputLocalBody)"
+                    [disabled]="validateFields(inputLocalBody)">Actualizar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    (click)="closePopup()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="row mt-5 mb-4">
+    <div class="col-lg-2 offset-lg-10 mb-3">
+        <button type="button" class="btn btn-lg btn-block btn-primary" (click)="openPopup()">
+            Registrar
+        </button>
+    </div>
+</div>
+
+<app-modal [inputDisplayStyle]="sendPropertyDisplayStyle()" [inputShowBtnRegister]="sendValueBtnRegister()"
+    (outputDisplayStyle)="changePropertyDisplayStyle($event)"
+    (outputListLocal)="changeValueListLocal($event)"></app-modal>

@@ -1,0 +1,7 @@
+<app-navbar></app-navbar>
+<div [style.margin.px]=10>
+    <app-create-local (outputListLocalFromCreate)="changeValueListLocal($event)"></app-create-local>
+</div>
+<div style="margin: 10px">
+    <app-list-local [inputListLocalFromApp]="sendValueListLocal()"></app-list-local>
+</div>

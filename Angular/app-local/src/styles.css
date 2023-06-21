@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+.title {
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 30px;
+}
+
+body {
+    background-color: #343536;
+}

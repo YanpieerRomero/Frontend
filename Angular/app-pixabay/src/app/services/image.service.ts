@@ -28,7 +28,7 @@ export class ImageService {
   }
   
   getImages(term: string, imagesBypage: number, currentlyPage: number): Observable<any> {
-    const KEY = 'key-pixabay';
+    const KEY = '33912733-22794d307cca4feb7bdfc08a0';
     const URL = 'https://pixabay.com/api/?key=' + KEY + '&q=' + term + 
                 '&per_page=' + imagesBypage + '&page=' + currentlyPage;
     return this.http.get(URL);

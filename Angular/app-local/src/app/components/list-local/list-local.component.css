@@ -1,0 +1,14 @@
+.text-center {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.fa-solid {
+    cursor: pointer;
+    margin-right: 7px;
+}
+
+.empty-table-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 25px;
+}
